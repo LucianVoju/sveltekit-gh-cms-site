@@ -1,5 +1,5 @@
 {
-	"name": "swyxkit",
+	"name": "voju",
 	"private": true,
 	"version": "0.0.1",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.44",
+		"@sveltejs/adapter-auto": "1.0.0-next.38",
 		"@sveltejs/kit": "^1.0.0-next.260",
 		"@tailwindcss/typography": "^0.5.0",
 		"@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -57,8 +57,6 @@
 	"type": "module",
 	"dependencies": {
 		"date-fns": "^2.28.0",
-		"node": "^17.7.2",
-		"node-fetch": "^2.6.6",
 		"parse-link-header": "^2.0.0",
 		"prism-themes": "^1.9.0",
 		"shiki": "^0.10.0",

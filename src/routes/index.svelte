@@ -49,8 +49,8 @@
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
 				An opinionated blog starter for <span class="font-semibold"
-					>SvelteKit + Tailwind + Netlify.</span
-				> Refreshed for 2022!
+					>SvelteKit + Tailwind + Vercel.</span
+				> Work in progress for 2022!
 			</h2>
 			<p class="mb-16 text-gray-600 dark:text-gray-400">
 				<a href={REPO_URL}>View source here!</a>

@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import remarkGithub from 'remark-github';
 import remarkAbbr from 'remark-abbr';
@@ -17,7 +17,7 @@ const mdsvexConfig = {
 			remarkGithub,
 			{
 				// Use your own repository
-				repository: 'https://github.com/mvasigh/sveltekit-mdsvex-blog.git'
+				repository: 'https://github.com/LucianVoju/sveltekit-gh-cms-site.git'
 			}
 		],
 		remarkAbbr
@@ -44,9 +44,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({
-			split: false
-		})
+		adapter: adapter()
 	}
 };
 
