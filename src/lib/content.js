@@ -48,8 +48,11 @@ export async function listContent() {
 		);
 
 		const issues = await res.json();
-		if ('message' in issues && res.status > 400)
+
+		if ('message' in issues && res.status > 400) {
 			throw new Error(res.status + ' ' + res.statusText + '\n' + (issues && issues.message));
+		}
+
 		issues.forEach(
 			/** @param {import('./types').GithubIssue} issue */
 			(issue) => {

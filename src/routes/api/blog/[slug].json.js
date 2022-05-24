@@ -8,6 +8,9 @@ export async function get({ params }) {
 	let data;
 	try {
 		data = await getContent(slug);
+
+		console.log('data comin');
+
 		return {
 			body: JSON.stringify(data),
 			headers: {

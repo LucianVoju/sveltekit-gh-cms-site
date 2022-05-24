@@ -1,5 +1,5 @@
-export const SITE_URL = 'https://swyxkit.netlify.app';
-export const APPROVED_POSTERS_GH_USERNAME = ['sw-yx'];
+export const SITE_URL = 'https://sveltekit-gh-cms-site.vercel.app/';
+export const APPROVED_POSTERS_GH_USERNAME = ['LucianVoju'];
 export const GH_USER_REPO = 'LucianVoju/sveltekit-gh-cms-site'; // used for pulling github issues and offering comments
 export const REPO_URL = 'https://github.com/' + GH_USER_REPO;
 export const SITE_TITLE = 'LucianV';

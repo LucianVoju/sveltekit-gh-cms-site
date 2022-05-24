@@ -34,11 +34,11 @@ module.exports = {
 							borderColor: 'rgba(0,0,0,0.1)'
 						},
 						'a:hover': {
-							color: '#31cdce !important',
+							color: '#F7F5DD !important',
 							textDecoration: 'underline !important'
 						},
 						a: {
-							color: '#3182ce',
+							color: '#C0A200',
 							textDecoration: 'none'
 						},
 						'a code': {

@@ -41,24 +41,27 @@
 				This is
 
 				<span
-					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-red-500"
+					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-indigo-500"
 				>
-					<span class="relative skew-y-3 text-yellow-400">{SITE_TITLE}</span>
+					<span class="relative skew-y-3 text-white">{SITE_TITLE}</span>
 				</span>
 				!
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
-				An opinionated blog starter for <span class="font-semibold"
-					>SvelteKit + Tailwind + Vercel.</span
-				> Work in progress for 2022!
+				Software Engineer at
+				<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/nagarro"
+					>Nagarro</a
+				>
 			</h2>
 			<p class="mb-16 text-gray-600 dark:text-gray-400">
-				<a href={REPO_URL}>View source here!</a>
+				<a href="/about">More on About page</a>
 			</p>
 		</div>
-		<!-- <div
-				class="w-[80px] h-[80px] rounded-full sm:w-[176px] sm:h-[136px] relative mb-8 sm:mb-0 mr-auto bg-cyan-300 bg-opacity-25"
-			/> -->
+		<img
+			alt="Lucian Voju"
+			src="/lucian-voju.png"
+			class="relative mb-8 mr-auto w-[80px] rounded-full bg-cyan-300 bg-opacity-25 sm:mb-0 sm:w-[176px]"
+		/>
 	</div>
 
 	<section class="mb-16 w-full">
@@ -92,5 +95,5 @@
 			></a
 		>
 	</section>
-	<Newsletter />
+	<!-- <Newsletter /> -->
 </div>
