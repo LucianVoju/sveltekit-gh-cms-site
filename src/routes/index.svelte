@@ -33,29 +33,30 @@
 </svelte:head>
 
 <div
-	class="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 px-4 pb-16 dark:border-gray-700 sm:px-8"
+	class="mx-auto flex w-full max-w-4xl flex-col items-start justify-center border-gray-200 px-4 pb-16 dark:border-gray-700 sm:px-8"
 >
 	<div class="flex flex-col-reverse items-start sm:flex-row">
-		<div class="flex flex-col pr-8">
+		<div class="mb-16 flex flex-col pr-8 ">
 			<h1 class="mb-3 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-				This is
-
+				Lucian
 				<span
-					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-indigo-500"
+					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-[#474f98]"
 				>
 					<span class="relative skew-y-3 text-white">{SITE_TITLE}</span>
 				</span>
-				!
+				.com
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
 				Software Engineer at
-				<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/nagarro"
-					>Nagarro</a
+				<a
+					class=" inline-block"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.linkedin.com/company/nagarro">Nagarro</a
 				>
 			</h2>
-			<p class="mb-16 text-gray-600 dark:text-gray-400">
-				<a href="/about">More on About page</a>
-			</p>
+
+			<a class="text-gray-600 dark:text-gray-400" href="/about">More on About page</a>
 		</div>
 		<img
 			alt="Lucian Voju"
