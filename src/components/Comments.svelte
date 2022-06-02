@@ -18,7 +18,7 @@
 	href={`${ghMetadata.issueUrl}#issuecomment-new`}
 	rel="external"
 	target="_blank"
-	class="flex justify-center border-y border-blue-700 p-4 no-underline hover:text-yellow-700 dark:hover:text-yellow-200 sm:inline sm:rounded-xl sm:border-x"
+	class="flex justify-center border-y border-blue-700 p-4 no-underline hover:text-lime-700 dark:hover:text-lime-200 sm:inline sm:rounded-xl sm:border-x"
 >
 	Leave a new comment!
 </a>
