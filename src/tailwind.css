@@ -4,6 +4,7 @@
 
 @layer components {
 	body {
+		/* Lime 400 */
 		--brand-accent: #a3e635;
 		/* https://ishadeed.com/article/defensive-css */
 		overflow-wrap: break-word;
@@ -66,7 +67,7 @@ h5 a,
 h6 a {
 	/* margin-left: 1rem; */
 	text-decoration: none !important;
-	@apply text-amber-600 dark:text-amber-400;
+	@apply text-emerald-600 dark:text-emerald-400;
 }
 .prose h2::before {
 	content: '## ';
@@ -97,8 +98,8 @@ h6 a {
   */
 body {
 	/* --scrollbar-primary-color: #3730a3; */
-	--scrollbar-primary-color: #d61b70;
-	--text-color: #474f98;
+	--scrollbar-primary-color: #a3e635;
+	--text-color: #14b8a6;
 }
 /* .dark body {
     --scrollbar-primary-color: #8db2e5;
