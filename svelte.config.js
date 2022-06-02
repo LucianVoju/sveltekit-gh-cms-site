@@ -44,7 +44,11 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		version: {
+			name: Date.now().toString()
+		},
+		trailingSlash: 'never'
 	}
 };
 
