@@ -8,6 +8,25 @@
 		MY_TWITTER_HANDLE
 	} from '$lib/siteConfig';
 	export const prerender = true; // index page is most visited, lets prerender
+	// export async function load({ params, fetch }) {
+	// 	const blogposts = await fetch(`/api/listBlogposts.json`);
+	// 	console.log('blogposts', blogposts);
+	// 	if (blogposts.status > 400) {
+	// 		console.error('render error for ' + `/api/listBlogposts.json`);
+	// 		return {
+	// 			status: blogposts.status,
+	// 			error: await blogposts.text()
+	// 		};
+	// 	} else {
+	// 		return {
+	// 			props: {
+	// 				blogposts: await blogposts.json()
+	// 				// speaking: await speaking.json()
+	// 			},
+	// 			maxage: 3600 // 1 hour
+	// 		};
+	// 	}
+	// }
 </script>
 
 <script>
@@ -40,14 +59,14 @@
 			<h1 class="mb-3 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
 				Lucian
 				<span
-					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-[#474f98]"
+					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-teal-700"
 				>
 					<span class="relative skew-y-3 text-white">{SITE_TITLE}</span>
 				</span>
 				.com
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
-				Software Engineer at
+				Full Stack JavaScript Developer, Weightlifter, Continuous Learner. Now I build things at
 				<a
 					class=" inline-block"
 					target="_blank"
@@ -60,7 +79,7 @@
 		</div>
 		<img
 			alt="Lucian Voju"
-			src="/lucian-voju.png"
+			src="/my_image.webp"
 			class="relative mb-8 mr-auto w-[80px] rounded-full bg-cyan-300 bg-opacity-25 sm:mb-0 sm:w-[176px]"
 		/>
 	</div>
@@ -70,13 +89,11 @@
 			Featured Posts
 		</h3>
 		<div class="flex flex-col gap-6 md:flex-row">
-			<FeatureCard title="Welcome to swyxkit 2022!" href="/welcome" stringData="Jan 2022" />
 			<FeatureCard
-				title="Moving to a GitHub CMS"
-				href="/moving-to-a-github-cms"
-				stringData="Jan 2022"
+				title="This is a test post using Github Issues as CMS"
+				href="/this-is-a-test-post-using-github-issues-as-cms"
+				stringData="June 2022"
 			/>
-			<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2022" />
 		</div>
 		<a
 			class="mt-8 flex h-6 rounded-lg leading-7 text-gray-600 transition-all dark:text-gray-400 dark:hover:text-gray-200"
