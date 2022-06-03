@@ -1,7 +1,5 @@
 <script context="module">
-	import {
-		SITE_TITLE
-	} from '$lib/siteConfig';
+	import { SITE_TITLE } from '$lib/siteConfig';
 
 	// export const prerender = true; // turned off so it refreshes quickly
 	export async function load({ params, fetch }) {
@@ -62,12 +60,11 @@
 
 <section class="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center px-4 sm:px-8">
 	<h1 class="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-		Blog
+		My Blog
 	</h1>
 	<p class="mb-4 text-gray-600 dark:text-gray-400">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sunt reprehenderit alias rerum
-		dolor impedit. In total, I've written {items.length} articles on my blog. Use the search below to
-		filter by title.
+		Here I try to write something about what I learn and find interesting. In total, I've written {items.length}
+		articles on my blog. Use the search below to filter by title.
 	</p>
 	<div class="relative mb-4 w-full">
 		<input
@@ -95,7 +92,7 @@
 		<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
 			Most Popular
 		</h3>
-		<IndexCard href="/foo" title="Hardcoded Blogpost # 1" stringData="106,255 views">
+		<!-- <IndexCard href="/foo" title="Hardcoded Blogpost # 1" stringData="106,255 views">
 			Just a hardcorded blogpost or you can use the metadata up to you
 		</IndexCard>
 		<IndexCard href="/welcome" title="Welcome to Swyxkit" stringData="106,255 views">
@@ -103,25 +100,18 @@
 		</IndexCard>
 		<IndexCard href="/moo" title="Hardcoded Blogpost # 3" stringData="106,255 views">
 			Just a hardcorded blogpost or you can use the metadata up to you
-		</IndexCard>
+		</IndexCard> -->
 
 		<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
 			All Posts
 		</h3>
 	{/if}
 	{#if list.length}
-		<ul class="">
-			{#each list as item}
-				<li class="mb-8 text-lg">
+		<ul class="max-w-full">
+			{#each list as item (item.slug)}
+				<li class="mb-4">
 					<!-- <code class="mr-4">{item.data.date}</code> -->
-					<IndexCard
-						href={item.slug}
-						title={item.title}
-						stringData={new Date(item.date).toISOString().slice(0, 10)}
-						ghMetadata={item.ghMetadata}
-					>
-						{item.description}
-					</IndexCard>
+					<IndexCard {item} />
 				</li>
 			{/each}
 		</ul>
@@ -140,7 +130,7 @@
 			No posts found for
 			<code>{search}</code>.
 		</div>
-		<button class="p-2 bg-slate-500" on:click={() => (search = '')}>Clear your search</button>
+		<button class="bg-slate-500 p-2" on:click={() => (search = '')}>Clear your search</button>
 	{:else}
 		<div class="prose dark:prose-invert">No blogposts found!</div>
 	{/if}
