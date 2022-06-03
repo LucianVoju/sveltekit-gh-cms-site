@@ -1,5 +1,5 @@
 <script context="module">
-	import { MY_TWITTER_HANDLE, MY_YOUTUBE, REPO_URL, SITE_TITLE } from '$lib/siteConfig';
+	import { MY_TWITTER_HANDLE, REPO_URL, SITE_TITLE } from '$lib/siteConfig';
 </script>
 
 <script>
@@ -8,6 +8,7 @@
 </script>
 
 <svelte:head>
+	<link href="https://github.com/LucianVoju" rel="me" />
 	<link
 		rel="alternate"
 		type="application/rss+xml"
@@ -19,7 +20,7 @@
 <div class="flex flex-col justify-center bg-gray-50 px-4 dark:bg-slate-900 sm:px-8">
 	<Nav />
 </div>
-<main class="flex flex-col justify-center bg-gray-50 px-4 dark:bg-gray-900 sm:px-8">
+<main class=" flex flex-1 flex-col  bg-gray-50 px-4 dark:bg-gray-900 sm:px-8">
 	<slot />
 </main>
 
@@ -29,7 +30,7 @@
 		<div class="flex flex-col space-y-4">
 			<a class="text-gray-500 transition hover:text-gray-300" href="/">Home</a>
 			<a class="text-gray-500 transition hover:text-gray-300" href="/about">About</a>
-			<a class="text-gray-500 transition hover:text-gray-300" href="/#newsletter">Newsletter</a>
+			<!-- <a class="text-gray-500 transition hover:text-gray-300" href="/#newsletter">Newsletter</a> -->
 		</div>
 		<div class="flex flex-col space-y-4">
 			<a
