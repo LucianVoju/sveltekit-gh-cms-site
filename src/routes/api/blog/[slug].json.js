@@ -5,19 +5,21 @@ import { getContent } from '$lib/content';
  */
 export async function get({ params }) {
 	const { slug } = params;
-	let data;
+
+	let data = null;
 	try {
 		data = await getContent(slug);
 
-		console.log('data comin');
-
 		return {
-			body: JSON.stringify(data),
+			body: {
+				data: JSON.stringify(data)
+			},
 			headers: {
 				'Cache-Control': `max-age=0, s-maxage=${60}` // 1 minute.. for now
 			}
 		};
 	} catch (err) {
+		console.log('ERRRR', err);
 		return {
 			status: 404,
 			body: err.message
