@@ -7,26 +7,7 @@
 		DEFAULT_OG_IMAGE,
 		MY_TWITTER_HANDLE
 	} from '$lib/siteConfig';
-	export const prerender = true; // index page is most visited, lets prerender
-	// export async function load({ params, fetch }) {
-	// 	const blogposts = await fetch(`/api/listBlogposts.json`);
-	// 	console.log('blogposts', blogposts);
-	// 	if (blogposts.status > 400) {
-	// 		console.error('render error for ' + `/api/listBlogposts.json`);
-	// 		return {
-	// 			status: blogposts.status,
-	// 			error: await blogposts.text()
-	// 		};
-	// 	} else {
-	// 		return {
-	// 			props: {
-	// 				blogposts: await blogposts.json()
-	// 				// speaking: await speaking.json()
-	// 			},
-	// 			maxage: 3600 // 1 hour
-	// 		};
-	// 	}
-	// }
+	export const prerender = true;
 </script>
 
 <script>
