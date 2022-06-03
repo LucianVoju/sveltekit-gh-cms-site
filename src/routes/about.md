@@ -5,7 +5,9 @@
   // more info https://twitter.com/Rich_Harris/status/1376578504704331778?s=20
 </script>
 
-# About swyxkit!
+<img class="rounded-full h-28 w-28 float-right" src="./my_image.webp" alt="Voju Lucian " />
+
+# About me
 
 This is swyx's preferred starter for Svelte projects:
 
@@ -36,7 +38,7 @@ See https://sveltekit-gh-cms-site.vercel.app/
   - RSS (at `/api/rss.xml`) with caching
 - Performance touches
   - no `hydrate` on about and blog pages
-    - *update: temporarily disabled while we figure out mobile nav without hydration*
+    - _update: temporarily disabled while we figure out mobile nav without hydration_
   - set `maxage` to 1 minute to cache (consider making it 1-7 days on older posts)
     - for API endpoints as well as pages
   - Security headers in `netlify.toml`
@@ -102,7 +104,7 @@ You can read:
     - Reasons it is hard to do dynamic RSS in Sveltekit:
       - Sveltekit Endpoints dont take over from Sveltekit dynamic param routes (`[slug].svelte` has precedence over `rss.xml.js`)
       - RSS Endpoint runs locally but doesnt run in Netlify bc no access to the content in prod
-      - approach i went for is to use Vite's `import.meta.globEager` feature and that makes it static for the RSS... 
+      - approach i went for is to use Vite's `import.meta.globEager` feature and that makes it static for the RSS...
 - Find more sveltekit projects at https://github.com/janosh/awesome-svelte-kit
 
 ## Todos
