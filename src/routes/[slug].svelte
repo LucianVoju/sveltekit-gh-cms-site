@@ -4,7 +4,8 @@
 	import { MY_TWITTER_HANDLE, REPO_URL, SITE_URL } from '$lib/siteConfig';
 	import Comments from '../components/Comments.svelte';
 
-	export async function load({ url, params, fetch }) {
+	/** @type {import('./__types/[slug]').Load} */
+	export async function load({ params, fetch }) {
 		const slug = params.slug;
 		try {
 			const res = await fetch(`/api/blog/${slug}.json`);
