@@ -57,7 +57,7 @@
 	<div class="flex flex-col-reverse items-start sm:flex-row">
 		<div class="mb-16 flex flex-col pr-8 ">
 			<h1 class="mb-3 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-				Lucian
+				Voju
 				<span
 					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-teal-700"
 				>
