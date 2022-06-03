@@ -5,12 +5,12 @@ import grayMatter from 'gray-matter';
 import { GH_USER_REPO, APPROVED_POSTERS_GH_USERNAME } from './siteConfig';
 import parse from 'parse-link-header';
 import slugify from 'slugify';
-
+import remarkToc from 'remark-toc';
 import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutoLink from 'rehype-autolink-headings';
 
-const remarkPlugins = undefined;
+const remarkPlugins = [remarkToc];
 const rehypePlugins = [
 	rehypeStringify,
 	rehypeSlug,
@@ -18,7 +18,7 @@ const rehypePlugins = [
 		rehypeAutoLink,
 		{
 			behavior: 'wrap',
-			properties: { class: 'hover:text-yellow-100 no-underline' }
+			properties: { class: 'hover:text-lime-100 no-underline' }
 		}
 	]
 ];
@@ -26,6 +26,7 @@ const rehypePlugins = [
 const allowedPosters = APPROVED_POSTERS_GH_USERNAME; // array of strings of github username
 const publishedTags = ['Published'];
 let allBlogposts = [];
+
 // let etag = null // todo - implmement etag header
 ``;
 export async function listContent() {
@@ -87,17 +88,23 @@ export async function getContent(slug) {
 	// find the blogpost that matches this slug
 	const blogpost = allBlogposts.find((post) => post.slug === slug);
 	if (blogpost) {
-		const blogbody = blogpost.content
-			.replace(/\n{% youtube (.*?) %}/g, (_, x) => {
-				// https://stackoverflow.com/a/27728417/1106414
-				function youtube_parser(url) {
-					var rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
-					return url.match(rx)[1];
-				}
-				const videoId = x.startsWith('https://') ? youtube_parser(x) : x;
-				return `<iframe
+		let content = (
+			await compile(blogpost.content, {
+				remarkPlugins,
+				rehypePlugins
+			})
+		).code;
+
+		content = content
+			// https://github.com/pngwn/MDsveX/issues/392
+			.replace(/>{@html `<code class="language-/g, '><code class="language-')
+			.replace(/<\/code>`}<\/pre>/g, '</code></pre>')
+			// regex for shortcode
+			.replace(
+				/{% youtube (.*?) %}/g,
+				(_, x) => `<iframe
 			class="w-full object-contain"
-			src="https://www.youtube.com/embed/${videoId}"
+			src="https://www.youtube.com/embed/${x}"
 			title="video123"
 			name="video123"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope;
@@ -108,27 +115,16 @@ export async function getContent(slug) {
 			width="600"
 			height="400"
 			allowFullScreen
-			aria-hidden="true"></iframe>`;
-			})
-			.replace(/\n{% (tweet|twitter) (.*?) %}/g, (_, _2, x) => {
-				const url = x.startsWith('https://twitter.com/') ? x : `https://twitter.com/x/status/${x}`;
-				return `
-					<blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-theme="dark">
-					<a href="${url}"></a></blockquote> 
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					`;
-			});
-
-		// compile it with mdsvex
-		const content = (
-			await compile(blogbody, {
-				remarkPlugins,
-				rehypePlugins
-			})
-		).code
-			// https://github.com/pngwn/MDsveX/issues/392
-			.replace(/>{@html `<code class="language-/g, '><code class="language-')
-			.replace(/<\/code>`}<\/pre>/g, '</code></pre>');
+			aria-hidden="true"></iframe>`
+			)
+			.replace(
+				/{% (tweet|twitter) (.*?) %}/g,
+				(_, _2, x) => `
+			<blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-theme="dark">
+			<a href="https://twitter.com/x/status/${x}"></a></blockquote> 
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			`
+			);
 
 		return { ...blogpost, content };
 	} else {
