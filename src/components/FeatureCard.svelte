@@ -6,7 +6,7 @@
 </script>
 
 <a
-	class="w-full transform rounded-xl bg-gradient-to-r from-[#d61b70]  to-[#474f98] p-1 transition-all hover:scale-[1.01] md:w-1/3"
+	class="w-full transform rounded-xl bg-gradient-to-r from-lime-400  to-pink-700 p-1 transition-all hover:scale-[1.01] md:w-1/3"
 	{href}
 	><div class="flex h-full flex-col justify-between rounded-lg bg-white p-4 dark:bg-gray-900">
 		<div class="flex flex-col justify-between md:flex-row">
