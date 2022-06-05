@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<link href="https://github.com/LucianVoju" rel="me" />
+	<link href="https://github.com/LucianVoju/" rel="me" />
 	<link
 		rel="alternate"
 		type="application/rss+xml"
