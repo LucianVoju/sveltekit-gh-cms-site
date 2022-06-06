@@ -1,4 +1,4 @@
-<img class="rounded-full h-28 w-28 float-right" src="./my_image.webp" alt="Voju Lucian " />
+<img height="112" width="112" class="rounded-full h-28 w-28 float-right" src="./my_image.webp" alt="Voju Lucian " />
 
 ## About me
 
