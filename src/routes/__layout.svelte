@@ -1,5 +1,5 @@
 <script context="module">
-	import { MY_TWITTER_HANDLE, REPO_URL, SITE_TITLE } from '$lib/siteConfig';
+	import { MY_TWITTER_HANDLE, SITE_TITLE, GH_USER } from '$lib/siteConfig';
 </script>
 
 <script>
@@ -45,7 +45,7 @@
 				class="text-gray-500 transition hover:text-gray-300"
 				target="_blank"
 				rel="noopener noreferrer"
-				href={REPO_URL}
+				href={GH_USER}
 			>
 				GitHub
 			</a>
