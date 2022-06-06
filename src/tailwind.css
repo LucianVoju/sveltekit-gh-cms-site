@@ -79,6 +79,17 @@ h6 a {
 	content: '#### ';
 }
 
+@media (min-width: 640px) {
+	.prose h1,
+	.prose h2,
+	.prose h3,
+	.prose h4,
+	.prose h5,
+	.prose h6 {
+		margin-left: -2.5rem;
+	}
+}
+
 /* https://seek-oss.github.io/capsize/ */
 .capsize::before {
 	content: '';
