@@ -1,6 +1,10 @@
 <script>
 	import { page } from '$app/stores';
 	$: isActive = $page.url.pathname === $$props.href;
+
+	/**
+	 * @type {string}
+	 */
 	export let href;
 </script>
 
