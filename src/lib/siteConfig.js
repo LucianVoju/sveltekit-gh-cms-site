@@ -2,6 +2,7 @@ export const SITE_URL = 'https://vojulucian.com';
 export const APPROVED_POSTERS_GH_USERNAME = ['LucianVoju'];
 export const GH_USER_REPO = 'LucianVoju/vojulucian.com'; // used for pulling github issues and offering comments
 export const REPO_URL = 'https://github.com/' + GH_USER_REPO;
+export const GH_USER = 'https://github.com/LucianVoju';
 export const SITE_TITLE = "Lucian's site";
 export const SITE_DESCRIPTION =
 	"Voju Lucian's officila site. Full Stack JavaScript Developer, Weightlifter, Continuous Learner";
