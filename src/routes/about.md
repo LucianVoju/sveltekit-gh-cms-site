@@ -2,7 +2,7 @@
 
 ## About me
 
-Hello, I'm Lucian. Full stack JavaScript [developer](https://github.com/LucianVoju) based in [Cluj-Napoca](https://en.wikipedia.org/wiki/Cluj-Napoca) Romania 🇷🇴.
+Hello, I'm **Lucian**. Full stack JavaScript [developer](https://github.com/LucianVoju) based in [Cluj-Napoca](https://en.wikipedia.org/wiki/Cluj-Napoca) Romania 🇷🇴.
 Went through a professional reconversion, finished the [informal school of it](https://informalschool.com/) and found my passion 😀. Since 2017 happy to apply it every day building great projects.
 
 I am a self learner, mostly interested in web development.
@@ -19,6 +19,16 @@ I like lifting weights, biking, listening to audiobooks and podcasts
 - Tailwind 3
 - Typescript
 - NodeJs
+- Git
+
+## Tech I touched or used on various projects
+
+- MongoDB
+- GraphQL
+- PostreSQL
+- Redis
+- Angular
+- Docker
 
 ## Things I start to learn
 
@@ -26,4 +36,13 @@ I like lifting weights, biking, listening to audiobooks and podcasts
 
 ## Things I build
 
-[Propertybook](https://propertybook.ro/)
+**_[Propertybook](https://propertybook.ro/) real estate aggregator from Romania._**
+
+Made with ❤️ using:
+
+- HTML
+- JavaScript
+- [Tailwindcss](https://tailwindcss.com/) for styling
+- [Svelte](https://svelte.dev/) for user interfaces
+- [Firebase](https://firebase.google.com/products/auth) && [Google Identity](https://developers.google.com/identity) for Auth
+- [leafletjs](https://leafletjs.com/) for displayng the map
