@@ -2,7 +2,8 @@
 	import { SITE_TITLE } from '$lib/siteConfig';
 
 	// export const prerender = true; // turned off so it refreshes quickly
-	export async function load({ params, fetch }) {
+	/** @type {import('./__types/[slug]').Load} */
+	export async function load({ fetch }) {
 		const res = await fetch(`/api/listContent.json`);
 		// alternate strategy https://www.davidwparker.com/posts/how-to-make-an-rss-feed-in-sveltekit
 		// Object.entries(import.meta.glob('./*.md')).map(async ([path, page]) => {
@@ -27,7 +28,7 @@
 <script>
 	import IndexCard from '../components/IndexCard.svelte';
 
-	export let page;
+	// export let page;
 	export let list;
 
 	// technically this is a slighlty different type because doesnt have 'content' but we'll let it slide
@@ -58,7 +59,7 @@
 
 <svelte:window on:keyup={focusSearch} />
 
-<section class="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center px-4 sm:px-8">
+<section class="mx-auto mb-16 flex max-w-4xl flex-col items-start justify-center px-4 sm:px-8">
 	<h1 class="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
 		My Blog
 	</h1>
