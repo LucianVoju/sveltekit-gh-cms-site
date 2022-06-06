@@ -1,5 +1,9 @@
 <script>
+	import { GH_USER } from '$lib/siteConfig';
 	let isOpen = false;
+	/**
+	 * @type {boolean}
+	 */
 	let isMenuRendered;
 	$: {
 		if (isOpen) {
@@ -44,7 +48,7 @@
 			>
 		{:else}
 			<svg
-				class="h-5 w-5 absolute text-gray-900 dark:text-gray-100"
+				class="absolute h-5 w-5 text-gray-900 dark:text-gray-100"
 				viewBox="0 0 24 24"
 				width="24"
 				height="24"
@@ -103,7 +107,7 @@
 				<a
 					class="flex w-auto pb-4"
 					on:click={() => setTimeout(() => (isOpen = false), 300)}
-					href="https://github.com/sw-yx/swyxkit">GitHub</a
+					href={GH_USER}>GitHub</a
 				>
 			</li>
 			<!-- <li
