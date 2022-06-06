@@ -13,6 +13,9 @@
 <script>
 	import Newsletter from '../components/Newsletter.svelte';
 	import FeatureCard from '../components/FeatureCard.svelte';
+
+	let imgW = 80;
+	let imgH = 80;
 </script>
 
 <svelte:head>
@@ -49,7 +52,7 @@
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
 				Full Stack JavaScript Developer, Weightlifter, Continuous Learner. Now I build things at
 				<a
-					class=" inline-block"
+					class="inline-block object-cover"
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://www.linkedin.com/company/nagarro">Nagarro</a
@@ -58,11 +61,15 @@
 
 			<a class="text-gray-600 dark:text-gray-400" href="/about">More on About page</a>
 		</div>
-		<img
-			alt="Lucian Voju"
-			src="/my_image.webp"
-			class="relative mb-8 mr-auto w-[80px] rounded-full bg-cyan-300 bg-opacity-25 sm:mb-0 sm:w-[176px]"
-		/>
+		<div bind:clientHeight={imgH} bind:clientWidth={imgW} class=" w-[80px]  sm:w-[176px]">
+			<img
+				height={imgH}
+				width={imgW}
+				alt="Lucian Voju"
+				src="/my_image.webp"
+				class="relative mb-8 mr-auto w-[80px] rounded-full bg-cyan-300 bg-opacity-25 sm:mb-0 sm:w-[176px]"
+			/>
+		</div>
 	</div>
 
 	<section class="mb-16 w-full">
@@ -96,3 +103,9 @@
 	</section>
 	<!-- <Newsletter /> -->
 </div>
+
+<style>
+	img {
+		aspect-ratio: attr(width) / attr(height);
+	}
+</style>
